@@ -1,0 +1,6 @@
+output
+*.jsonlines
+*.tar.gz
+*.zip
+*.pyc
+*.swp
