@@ -1,12 +1,26 @@
 import scrapy
 import re
 
-class ForumSpider(scrapy.Spider):
-    name = "forum"
+class GuestsSpider(scrapy.Spider):
+    name = "guests"
 
     def start_requests(self):
         urls = [
-            'https://www.themagiccafe.com/forums/index.php'
+            'https://www.themagiccafe.com/forums/guests.php?year=2002',
+            'https://www.themagiccafe.com/forums/guests.php?year=2003',
+            'https://www.themagiccafe.com/forums/guests.php?year=2004',
+            'https://www.themagiccafe.com/forums/guests.php?year=2005',
+            'https://www.themagiccafe.com/forums/guests.php?year=2006',
+            'https://www.themagiccafe.com/forums/guests.php?year=2007',
+            'https://www.themagiccafe.com/forums/guests.php?year=2008',
+            'https://www.themagiccafe.com/forums/guests.php?year=2009',
+            'https://www.themagiccafe.com/forums/guests.php?year=2010',
+            'https://www.themagiccafe.com/forums/guests.php?year=2011',
+            'https://www.themagiccafe.com/forums/guests.php?year=2012',
+            'https://www.themagiccafe.com/forums/guests.php?year=2013',
+            'https://www.themagiccafe.com/forums/guests.php?year=2014',
+            'https://www.themagiccafe.com/forums/guests.php?year=2015',
+            'https://www.themagiccafe.com/forums/guests.php?year=2016',
         ]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse_main_forum)
